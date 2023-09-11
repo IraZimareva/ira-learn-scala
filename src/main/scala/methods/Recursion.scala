@@ -1,5 +1,7 @@
 package methods
 
+import scala.annotation.tailrec
+
 /*
 Раскомментируйте строчку в методе fibs и допишите код так, чтобы метод возвращал число Фибоначчи по его порядковому номеру;
  а затем исправьте ошибку компиляции.
@@ -8,6 +10,7 @@ package methods
 */
 object Recursion extends App{
     def fibs(num: Int) = {
+        @tailrec
         def recurFib(pos: Int, first: Int, second: Int): Int = {
             if (pos >= num) first + second
             else recurFib(pos + 1, second, first + second)
